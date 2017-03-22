@@ -1,0 +1,3 @@
+[submodule "newa"]
+	path = newa
+	url = https://github.com/bnoon/newa.git
