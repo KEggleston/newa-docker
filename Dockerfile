@@ -1,6 +1,8 @@
 FROM newa-base:v1.0
 
 COPY newa /newa
+RUN cd /newa/newaModel/dmcast; gcc -shared *.c -fPIC -o libdmcast.so
+
 WORKDIR /newa
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
