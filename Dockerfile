@@ -1,7 +1,10 @@
 FROM newa-base:v1.0
 
 COPY newa /newa
+RUN find /newa -name "*.pyc" -print -exec rm {} \;
 RUN cd /newa/newaModel/dmcast; gcc -shared *.c -fPIC -o libdmcast.so
+RUN cd /newa/newaCommon; python splitStationInfoList.py
+RUN cd /newa; python -m compileall .; python util/compile_qpy.py
 
 WORKDIR /newa
 
