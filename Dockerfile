@@ -1,4 +1,4 @@
-FROM newa-base:v1.0
+FROM newa-base:v1.1
 
 COPY newa /newa
 RUN find /newa -name "*.pyc" -print -exec rm {} \;

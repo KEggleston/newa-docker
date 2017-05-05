@@ -2,11 +2,10 @@ version: '2'
 
 services:
     newa:
-        image: newa:v1.0
+        image: newa:20170504
         ports:
          - "8080:80"
         volumes:
-         - ./newa:/newa
          - ./ndfd:/ndfd
          - ./logs:/logs
 
